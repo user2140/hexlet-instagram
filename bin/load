@@ -1,0 +1,26 @@
+#!/usr/bin/php
+<?php
+
+use function StatIg\Load\loadRemoteUserData;
+
+require_once __DIR__ . "/../vendor/autoload.php";
+
+if (empty($argv[1])) {
+	echo "Empty username argument\n";
+	echo "Usage: load <username> [<sessionId>]\n";
+	exit(1);
+}
+
+$username = $argv[1];
+
+$sessionId = $argv[2] ?? null;
+
+if ($sessionId !== null) {
+	echo "Using sessionid = $sessionId\n";
+}
+
+//echo "$username, $sessionId";
+
+$fullPath = loadRemoteUserData($username, $sessionId);
+
+echo "Data has been stored to ".realpath($fullPath)."\n";

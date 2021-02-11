@@ -1,0 +1,17 @@
+{
+    "name": "andrej/stat-ig",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^7.2",
+		"ext-json": "*",
+        "illuminate/collections": "^8.26"
+    },
+	"autoload": {
+		"files": [
+			"src/Load.php",
+			"src/Stat.php",
+			"src/Storage.php"
+		]
+	}
+	}
